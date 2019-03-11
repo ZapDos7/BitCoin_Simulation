@@ -76,24 +76,21 @@ int main(int argc, char const *argv[]) {
 	char * token;
 	ssize_t read; //file descpriptor, se poion buffer , posa bytes na diavasw
 	walletHT wht(712); //rng
+	//int count_lines = 0;
 	while(read = getline(&line, &len, bitCoinBalancesFilePtr)!=-1) {
 		token = strtok(line, s);
-		int count = 0;
+	//	count_lines++;
 		while (token != NULL) {
-			//fprintf(stderr, "%s \n", token);
-			token = strtok(line, s);
+			fprintf(stderr, "%s", token);
+			token = strtok(NULL, s);
 			//(*wht.get_table())->set_id(token);
-			count++;
 		}
-		fprintf (stderr, "%d\n", count);
 	}
+	//fprintf (stderr, "%d\n", count_lines);
 	fclose (bitCoinBalancesFilePtr);
 	if (line) free(line); //line was temporary
 	if (token) free(token); //after i read transactions file too
-	//read files
-	//sort in HT:
-	//wallets
-
+	
 	//read input
 	//pick a method while(1)
 
