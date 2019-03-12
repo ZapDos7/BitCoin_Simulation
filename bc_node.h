@@ -11,8 +11,8 @@ private:
     bitcoin me;
     bitcoin_node * next;
 public:
-    //bitcoin_node(int meid, int meval);
-    //~bitcoin_node();
+    bitcoin_node(/*int meid, int meval*/);
+    ~bitcoin_node();
     bitcoin_node * create(bitcoin bme, bitcoin_node* bnext);
     bitcoin_node * prepend(bitcoin_node * head, bitcoin data); //head -> new_node
     //bool is_empty();

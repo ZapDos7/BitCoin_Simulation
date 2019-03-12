@@ -19,6 +19,9 @@ public:
     ~wallet();
     void set_id(char*id);
     void print_id();
+    void init_bclist(int bcid, int val);
+    bitcoin_node* add_bc(int bcid, int val);
+    void print_bc();
     char * get_name();
     void set_balance();
     int get_balance();
@@ -29,13 +32,13 @@ class walletHT
 {
 private:
     int size;
-    wallet ** table;
+    wallet * table;
 public:
     walletHT(int sz);
     ~walletHT();
     void set_size(int sz);
     int get_size();
-    wallet ** get_table();
+    wallet * get_table();
 };
 
 

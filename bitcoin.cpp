@@ -19,12 +19,12 @@ int main(int argc, char const *argv[]) {
 	int BCValue, sHTsize, rHTsize, bucket_size = 0;
 	FILE * bitCoinBalancesFilePtr;
 	FILE * transactionsFilePtr;
-	if (argc !=13) {
+	if (argc !=13) {	//wrong input
 		fprintf(stderr, "Invalid execution, please try again!\n");
 		exit(-1);
 	}
 	else {
-		for (int i = 1; i < argc; i+=2) {
+		for (int i = 1; i < argc; i+=2) {	//check each odd arg, the next is the desired value
 			if (strcmp(argv[i],"-a")==0) {
 				bitCoinBalancesFilePtr = fopen(argv[i+1], "r");
 				if (bitCoinBalancesFilePtr==NULL) {
@@ -69,30 +69,51 @@ int main(int argc, char const *argv[]) {
 			}
 		}
 	}
-	//step 2 - initialize data structures
+	
+
+	/*
 	bitcoin b;
 	bitcoin_node *b1, *b2;
 	b1->create(b, b2);
 	//fprintf(stderr, "ok\n");
 	b2->prepend(b2, b);
 	//fprintf(stderr, "ok\n");
+*/
+
+
+	//step 2 - initialize data structures
+	//read bc file
 	char * line = NULL;
 	size_t len = 0;
 	const char s[2] = " ";
 	char * token;
 	ssize_t read; //file descpriptor, se poion buffer , posa bytes na diavasw
 	walletHT wht(712); //rng
-	//int count_lines = 0;
 	while(read = getline(&line, &len, bitCoinBalancesFilePtr)!=-1) {
 		token = strtok(line, s);
-	//	count_lines++;
+		wallet * tmpw;
 		while (token != NULL) {
-			fprintf(stderr, "%s\n", token);
-			token = strtok(NULL, s);
-			wht.get_table();//->set_id(token)
+			//fprintf(stderr, "%s\n", token);
+			tmpw = wht.get_table();//->set_id(token)
+			tmpw->set_id(token);
+			//tmpw->print_id();
+			token = strtok(NULL, s); //first bc
+			if (token == NULL) {
+				fprintf(stderr, "No more bitcoins before 1st\n");
+				break;
+			}
+			tmpw->init_bclist(atoi(token), BCValue);
+			while(token != NULL){ //read the rest line
+				bitcoin_node * tmp;
+				tmpw->add_bc(atoi(token), BCValue);
+				token = strtok(NULL, s);
+				if (token == NULL) {
+					fprintf(stderr, "No more bitcoins after 1st\n");
+				}
+			}
 		}
 	}
-	//fprintf (stderr, "%d\n", count_lines);
+//	fprintf (stderr, "ok\n");
 	fclose (bitCoinBalancesFilePtr);
 	if (line) free(line); //line was temporary
 	if (token) free(token); //after i read transactions file too

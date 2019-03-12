@@ -25,6 +25,27 @@ void wallet::print_id() {
     return;
 }
 
+void wallet::init_bclist(int bcid, int val) {
+    bitcoin btmp;
+    btmp.set_bid(bcid);
+    btmp.set_value(val);
+    this->bcHead->create(btmp, NULL);
+    return;
+}
+
+bitcoin_node* wallet::add_bc(int bcid, int val) {
+    bitcoin btmp;
+    btmp.set_bid(bcid);
+    btmp.set_value(val);
+    bitcoin_node * a;
+    a->prepend(this->bcHead, btmp);
+    return a;
+}
+
+void wallet::print_bc() {
+
+}
+
 char * wallet::get_name() {
     return this->name;
 }
@@ -42,7 +63,7 @@ int wallet::get_balance() {
 ////////////
 walletHT::walletHT(int sz) {
     this->size = sz;
-    this->table = (wallet**) malloc(sz*sizeof(wallet));
+    this->table = (wallet*) malloc(sz*sizeof(wallet));
 }
 
 walletHT::~walletHT() {
@@ -59,7 +80,7 @@ int walletHT::get_size() {
     return this->size;
 }
 
-wallet ** walletHT::get_table() {
+wallet * walletHT::get_table() {
     return this->table;
 }
 

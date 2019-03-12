@@ -1,13 +1,13 @@
 #include "bc_node.h"
 
-//bitcoin_node::bitcoin_node(int meid, int meval) {
+bitcoin_node::bitcoin_node(/*int meid, int meval*/) {
     //this->me(meval);
     //this->me.set_bid(meid);
     //this->me.set_value(meval);
     //this->next = NULL;
-//}
+}
 
-//bitcoin_node::~bitcoin_node() {}
+bitcoin_node::~bitcoin_node() {}
 /*
 bool bitcoin_node::is_empty() {
     if (this->next != NULL) {
