@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <cstdlib>
 
+
 #include "bc_node.h"
 //wallets
 class wallet

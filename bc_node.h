@@ -15,6 +15,9 @@ public:
     ~bitcoin_node();
     bitcoin_node * create(bitcoin bme, bitcoin_node* bnext);
     bitcoin_node * prepend(bitcoin_node * head, bitcoin data); //head -> new_node
+    int get_bc_id();
+    //int get_bc_val();
+    bitcoin_node * get_next();
     //bool is_empty();
     //bitcoin_node& operator=(const bitcoin_node& b);
     //int search(bitcoin_node head, int bid);

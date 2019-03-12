@@ -70,17 +70,6 @@ int main(int argc, char const *argv[]) {
 		}
 	}
 	
-
-	/*
-	bitcoin b;
-	bitcoin_node *b1, *b2;
-	b1->create(b, b2);
-	//fprintf(stderr, "ok\n");
-	b2->prepend(b2, b);
-	//fprintf(stderr, "ok\n");
-*/
-
-
 	//step 2 - initialize data structures
 	//read bc file
 	char * line = NULL;
@@ -96,23 +85,32 @@ int main(int argc, char const *argv[]) {
 			//fprintf(stderr, "%s\n", token);
 			tmpw = wht.get_table();//->set_id(token)
 			tmpw->set_id(token);
-			//tmpw->print_id();
+			tmpw->print_id();
 			token = strtok(NULL, s); //first bc
-			if (token == NULL) {
-				fprintf(stderr, "No more bitcoins before 1st\n");
-				break;
+			/*if (token == NULL) {
+				//fprintf(stderr, "No more bitcoins before 1st\n");
+				continue;
 			}
+			else {*/
+				fprintf(stderr, "%s \n", token);
+			//}
 			tmpw->init_bclist(atoi(token), BCValue);
 			while(token != NULL){ //read the rest line
 				bitcoin_node * tmp;
 				tmpw->add_bc(atoi(token), BCValue);
 				token = strtok(NULL, s);
 				if (token == NULL) {
-					fprintf(stderr, "No more bitcoins after 1st\n");
+					//fprintf(stderr, "No more bitcoins after 1st\n");
+					continue;
+				}
+				else {
+					fprintf(stderr, "%s \n", token);
 				}
 			}
-		}
-	}
+			tmpw->print_bc();
+		}//end while line
+		if (tmpw) free(tmpw);
+	}//end while file
 //	fprintf (stderr, "ok\n");
 	fclose (bitCoinBalancesFilePtr);
 	if (line) free(line); //line was temporary

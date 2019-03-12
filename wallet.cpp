@@ -43,7 +43,16 @@ bitcoin_node* wallet::add_bc(int bcid, int val) {
 }
 
 void wallet::print_bc() {
-
+    bitcoin_node * tmp;
+    int count = 0;
+    fprintf(stderr, "(HEAD)Bitcoin ID = %d\n", this->bcHead->get_bc_id());
+    while(tmp != NULL){
+        tmp = this->bcHead->get_next();
+        fprintf(stderr, "(BC%d)Bitcoin ID = %d\n",count, tmp->get_bc_id());
+        count ++;
+        tmp = tmp->get_next();
+    }
+    return;
 }
 
 char * wallet::get_name() {

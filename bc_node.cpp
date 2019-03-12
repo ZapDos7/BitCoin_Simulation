@@ -35,6 +35,18 @@ bitcoin_node * bitcoin_node::prepend(bitcoin_node * head, bitcoin data) {
     return head;
 }
 
+int bitcoin_node::get_bc_id() {
+    return this->me.get_bid();
+}
+
+/*int bitcoin_node::get_bc_val() {
+    return this->me.get_value();
+}*/
+
+bitcoin_node * bitcoin_node::get_next() {
+    return this->next;
+}
+
 /*bitcoin_node& bitcoin_node::operator=(const bitcoin_node& b) {
     me = b.me;
     next = b.next;
