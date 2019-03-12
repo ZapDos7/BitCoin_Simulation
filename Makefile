@@ -1,9 +1,11 @@
 make:
 	g++ -c bitcoin.cpp
 	g++ -c wallet.cpp
+	g++ -c wallet_ht.cpp
 	g++ -c bc.cpp
+	g++ -c ht.cpp
 	g++ -c bc_node.cpp
-	g++ -g -Wall bitcoin.o wallet.o bc.o bc_node.o -o bitcoin
+	g++ -g -Wall bitcoin.o wallet.o bc.o bc_node.o ht.o wallet_ht.o -o bitcoin
 
 run:
 	./bitcoin -a bitCoinBalancesFile.txt -t transactionsFile.txt -v 1 -h1 16 -h2 16 -b 4

@@ -28,19 +28,5 @@ public:
     int get_balance();
 };
 
-//walletHT
-class walletHT
-{
-private:
-    int size;
-    wallet * table;
-public:
-    walletHT(int sz);
-    ~walletHT();
-    void set_size(int sz);
-    int get_size();
-    wallet * get_table();
-};
-
 
 #endif

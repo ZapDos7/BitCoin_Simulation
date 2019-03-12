@@ -7,7 +7,10 @@ System Programming Project #1, 2018-19
 #include <cstring> //strtok
 #include <unistd.h> //ssize_t
 
+#include "bc.h"
+#include "bc_node.h"
 #include "wallet.h"
+#include "wallet_ht.h"
 //#include "bc.h"
 
 using namespace std;
@@ -82,34 +85,17 @@ int main(int argc, char const *argv[]) {
 		token = strtok(line, s);
 		wallet * tmpw;
 		while (token != NULL) {
-			//fprintf(stderr, "%s\n", token);
 			tmpw = wht.get_table();//->set_id(token)
 			tmpw->set_id(token);
 			tmpw->print_id();
+			fprintf(stderr, "%s \n", token);
 			token = strtok(NULL, s); //first bc
-			/*if (token == NULL) {
-				//fprintf(stderr, "No more bitcoins before 1st\n");
-				continue;
+			if (token==NULL) {
+				fprintf(stderr, "is null\n");
 			}
-			else {*/
-				fprintf(stderr, "%s \n", token);
-			//}
-			tmpw->init_bclist(atoi(token), BCValue);
-			while(token != NULL){ //read the rest line
-				bitcoin_node * tmp;
-				tmpw->add_bc(atoi(token), BCValue);
-				token = strtok(NULL, s);
-				if (token == NULL) {
-					//fprintf(stderr, "No more bitcoins after 1st\n");
-					continue;
-				}
-				else {
-					fprintf(stderr, "%s \n", token);
-				}
-			}
-			tmpw->print_bc();
+			
 		}//end while line
-		if (tmpw) free(tmpw);
+		//if (tmpw) free(tmpw);
 	}//end while file
 //	fprintf (stderr, "ok\n");
 	fclose (bitCoinBalancesFilePtr);
