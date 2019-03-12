@@ -70,6 +70,12 @@ int main(int argc, char const *argv[]) {
 		}
 	}
 	//step 2 - initialize data structures
+	bitcoin b;
+	bitcoin_node *b1, *b2;
+	b1->create(b, b2);
+	//fprintf(stderr, "ok\n");
+	b2->prepend(b2, b);
+	//fprintf(stderr, "ok\n");
 	char * line = NULL;
 	size_t len = 0;
 	const char s[2] = " ";
@@ -81,9 +87,9 @@ int main(int argc, char const *argv[]) {
 		token = strtok(line, s);
 	//	count_lines++;
 		while (token != NULL) {
-			fprintf(stderr, "%s", token);
+			fprintf(stderr, "%s\n", token);
 			token = strtok(NULL, s);
-			//(*wht.get_table())->set_id(token);
+			wht.get_table();//->set_id(token)
 		}
 	}
 	//fprintf (stderr, "%d\n", count_lines);

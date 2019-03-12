@@ -1,14 +1,12 @@
 #include "bc.h"
 
-bitcoin::bitcoin(int v)
-{
-    this->value = v;
+//bitcoin::bitcoin(int v) {
+bitcoin::bitcoin() {
+    this->value = 0;
     return;
 }
 
-bitcoin::~bitcoin()
-{
-}
+bitcoin::~bitcoin(){}
 
 void bitcoin::set_value(int v) {
     this->value = v;

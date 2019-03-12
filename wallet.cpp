@@ -1,12 +1,16 @@
 #include "wallet.h"
 
-wallet::wallet(char * nm) {
+////////////wallets
+//wallet::wallet(char * nm) {
+wallet::wallet(char * nm, int meid, int meval) { //char * nm
     strcpy(this->name, nm);
-    this->myBitCoins = (bitcoin*) malloc(sizeof(bitcoin));
+    //this->myBitCoins
+    //this->myBitCoins(meid,meval);
+    //this->myBitCoins = (bitcoin) malloc(sizeof(bitcoin));
 }
 
 wallet::~wallet() {
-    free(this->myBitCoins);
+    //free(this->myBitCoins);
     free(this->name);
     free(this);
 }
@@ -23,6 +27,16 @@ void wallet::print_id() {
 
 char * wallet::get_name() {
     return this->name;
+}
+
+void wallet::set_balance() {
+    //iterate through the bitcoins and sum their shit?
+    //or update the balance for each transaction
+    return;
+}
+
+int wallet::get_balance() {
+    return this->myBalance;
 }
 
 ////////////

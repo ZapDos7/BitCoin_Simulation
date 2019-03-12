@@ -5,20 +5,23 @@
 #include <stdio.h>
 #include <cstdlib>
 
-#include "bc.h"
-
+#include "bc_node.h"
 //wallets
 class wallet
 {
 private:
     char name[51]; //50 + '\0'
-    bitcoin * myBitCoins;
+    bitcoin_node * bcHead;
+    int myBalance;
 public:
-    wallet(char * nm);
+    //wallet(char * nm);
+    wallet(char * nm, int meid, int meval);
     ~wallet();
     void set_id(char*id);
     void print_id();
     char * get_name();
+    void set_balance();
+    int get_balance();
 };
 
 //walletHT
