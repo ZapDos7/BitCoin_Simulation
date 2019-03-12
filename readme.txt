@@ -26,8 +26,8 @@ The code has been seperated to the following files:
     Makefile                compilation and execution - a typical makefile.
     bitCoinBalancesFile.txt sample file.
     transactionsFile.txt    sample file.
-
-References:
+~~~
+REFERENCES:
     K04 notes (2014-15) - personal & Professor's
     K08 notes (2014-15) - personal & Professor's
     K10 notes (2015-16) - personal & Professor's
