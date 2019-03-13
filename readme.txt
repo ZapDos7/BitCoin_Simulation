@@ -18,6 +18,7 @@ Used valgrind for memory leak checks and debugging.
 Used git for version control.
 Used include guards in order to avoid double inclusion of header files.
 Used the hash table data structure for the sender and receiver hashtable (HT) as well as the wallet manipulation.
+The files and implemented classes are heavily based on the concept of layering information and information data structures (e.g. with different classes for the node, the list, etc), so that there is reusable code, it's easier to read and understand (based on only the header files, one has a full view on the implementation) and for better code conservation.
 ~~~
 FILES
 The code has been seperated to the following files:
@@ -27,6 +28,7 @@ The code has been seperated to the following files:
     wallet.cpp/.h           my choice of data structure (hashtable) for the elements of the wallets and the wallets themselves.
     ht.cpp/.h               hash tables implementation
     tree.cpp/.h             BitCoin tree implementation
+    transaction.cpp/.h      transaction class (id, sndr, rcvr...)
     readme.txt              this readme
     Makefile                compilation and execution - a typical makefile.
     bitCoinBalancesFile.txt sample file.
