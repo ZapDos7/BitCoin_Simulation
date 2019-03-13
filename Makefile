@@ -4,7 +4,8 @@ make:
 	g++ -c bc.cpp
 	g++ -c ht.cpp
 	g++ -c bc_node.cpp
-	g++ -g -Wall bitcoin.o wallet.o bc.o bc_node.o ht.o -o bitcoin
+	g++ -c tree.cpp
+	g++ -g -Wall bitcoin.o wallet.o bc.o bc_node.o ht.o tree.o -o bitcoin
 
 run:
 	./bitcoin -a bitCoinBalancesFile.txt -t transactionsFile.txt -v 1 -h1 16 -h2 16 -b 4

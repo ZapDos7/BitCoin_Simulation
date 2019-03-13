@@ -25,7 +25,8 @@ The code has been seperated to the following files:
     bc.cpp/.h               bitcoin class and methods files
     bc_node.cpp/.h          list of bitcoins node so there's layers of abstraction for the list and the bitcoin class may be reusable
     wallet.cpp/.h           my choice of data structure (hashtable) for the elements of the wallets and the wallets themselves.
-    ht.cpp/.h               hash tables implementations
+    ht.cpp/.h               hash tables implementation
+    tree.cpp/.h             BitCoin tree implementation
     readme.txt              this readme
     Makefile                compilation and execution - a typical makefile.
     bitCoinBalancesFile.txt sample file.

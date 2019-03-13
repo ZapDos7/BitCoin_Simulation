@@ -25,7 +25,7 @@ public:
     void print_bc();
     char * get_name();
     void set_balance();
-    int get_balance();
+    int get_balance();//to be implemented
 };
 
 

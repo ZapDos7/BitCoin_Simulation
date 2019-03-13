@@ -18,6 +18,7 @@ public:
     void set_table(wallet ** table1);
     int hash_fun(wallet w);
     wallet * insert_wallet(wallet w);
+    //update wallet function for each transaction
 };
 
 #endif
