@@ -1,17 +1,23 @@
-#ifndef _HT_H_
-#define _HT_H_
+#ifndef _WHT_H_
+#define _WHT_H_
 
 #include "wallet.h"
 
-class ht_node
+//walletHT
+class walletHT
 {
 private:
-    wallet myData;
-
+    int size;
+    wallet * table;
 public:
-    ht_node();
-    ~ht_node();
-    int hash_fun(wallet w, int size);
+    walletHT(int sz);
+    ~walletHT();
+    void set_size(int sz);
+    int get_size();
+    wallet * get_table();
+    void set_table(wallet * table1);
+    wallet * insert_wallet();
+    int hash_fun(wallet w);
 };
 
 #endif
