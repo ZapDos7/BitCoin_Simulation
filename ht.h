@@ -1,23 +1,23 @@
-#ifndef _WHT_H_
-#define _WHT_H_
+#ifndef _T_H_
+#define _T_H_
 
 #include "wallet.h"
 
-//walletHT
-class walletHT
+//hash table
+class HT
 {
 private:
     int size;
-    wallet * table;
+    wallet ** table;
 public:
-    walletHT(int sz);
-    ~walletHT();
+    HT(int sz);
+    ~HT();
     void set_size(int sz);
     int get_size();
     wallet * get_table();
-    void set_table(wallet * table1);
-    wallet * insert_wallet();
+    void set_table(wallet ** table1);
     int hash_fun(wallet w);
+    wallet * insert_wallet(wallet w);
 };
 
 #endif

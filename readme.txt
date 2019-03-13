@@ -32,7 +32,7 @@ The code has been seperated to the following files:
     transactionsFile.txt    sample file.
 ~~~
 REFERENCES:
-    K04 notes (2014-15) - personal & Professor's, as well as my then projects
-    K08 notes (2014-15) - personal & Professor's, as well as my then projects
-    K10 notes (2015-16) - personal & Professor's, as well as my then projects
-    K18 notes (2017-18) - personal & Professor's, as well as my then projects
+    K04 notes (2014-15) - personal & Professor's, as well as my projects
+    K08 notes (2014-15) - personal & Professor's, as well as my projects
+    K10 notes (2015-16) - personal & Professor's, as well as my projects
+    K18 notes (2017-18) - personal & Professor's, as well as my projects

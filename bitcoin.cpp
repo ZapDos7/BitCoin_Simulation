@@ -10,7 +10,7 @@ System Programming Project #1, 2018-19
 #include "bc.h"
 #include "bc_node.h"
 #include "wallet.h"
-#include "wallet_ht.h"
+#include "ht.h"
 //#include "bc.h"
 
 using namespace std;
@@ -80,12 +80,12 @@ int main(int argc, char const *argv[]) {
 	const char s[2] = " ";
 	char * token;
 	ssize_t read; //file descpriptor, se poion buffer , posa bytes na diavasw
-	walletHT wht(712); //rng
+	HT ht(712); //rng for the wallets
 	while(read = getline(&line, &len, bitCoinBalancesFilePtr)!=-1) {
 		token = strtok(line, s);
 		wallet * tmpw;
 		while (token != NULL) {
-			tmpw = wht.get_table();//->set_id(token)
+			tmpw = ht.get_table();//->set_id(token)
 			tmpw->set_id(token);
 			tmpw->print_id();
 			fprintf(stderr, "%s \n", token);
