@@ -118,7 +118,7 @@ int main(int argc, char const *argv[]) {
 		//year: DD/MM/YYYY
 		//requestTransaction swID rwID amount date time ->elegxgos eparkwn funds, update domes, msg for errors or ok. an de do8ei date-time: wra sustimatos upon execution (must be metagenestera of layyer sunallagis pou katagrafike ws twra apo to app)
 		//requestTransactions sID1 rID1 a d t; sID2 wID2 a d t;... -> anamesa exoun semicolon ;
-		//requestTransactions inputfile -> apo file (xwrizontai me \n)
+		//requestTransactions inputfile -> apo file (xwrizontai me \n) -  PALI EGW DINW ID
 		//finEarnings walletID t1 y1 t2 y2 -> walletID = rcvID, return initial poso pou elave o wID (euros xronou may not exist => all (an uparxei t1, must uparxei t2 (same for y1, y2))), present all registers me wID=rcv
 		//findPayments walletID -> walletID = senderID (like above)
 		//walletStatus walletID -> return current wallet balance

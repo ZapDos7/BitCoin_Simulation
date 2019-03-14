@@ -3,6 +3,7 @@
 
 #include <cstring>
 #include "bc.h"
+#include "transaction.h"
 
 class root
 {
@@ -25,7 +26,8 @@ class tree_node
 private:
     char name[51]; //node name (rcvr or sender, doesnt matter here)
     int value; //node value, e.g. $50
-    //pointer to HT
+    transaction * trans; //pointer to transaction
+    //bool is_send;
     //flag an eimai send or rcv (or check if i am left or right?)
 public:
     tree_node();
