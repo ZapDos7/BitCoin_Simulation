@@ -4,7 +4,7 @@ System Programming (Class of Even Registration Numbers)
 Spring Semester 2018-19
 Professor: Ntoulas A.
 ~~~
-INSTRUCTIONS
+INSTRUCTIONS:
 To compile: 
     $make
 To execute:
@@ -13,14 +13,14 @@ To execute:
 To clean the directory:
     $make clean
 ~~~
-NOTES
+NOTES:
 Used valgrind for memory leak checks and debugging.
 Used git for version control.
 Used include guards in order to avoid double inclusion of header files.
 Used the hash table data structure for the sender and receiver hashtable (HT) as well as the wallet manipulation.
 The files and implemented classes are heavily based on the concept of layering information and information data structures (e.g. with different classes for the node, the list, etc), so that there is reusable code, it's easier to read and understand (based on only the header files, one has a full view on the implementation) and for better code conservation.
 ~~~
-FILES
+FILES:
 The code has been seperated to the following files:
     bitcoin.cpp             the main application
     bc.cpp/.h               bitcoin class and methods files
@@ -39,3 +39,7 @@ REFERENCES:
     K08 notes (2014-15) - personal & Professor's, as well as my projects
     K10 notes (2015-16) - personal & Professor's, as well as my projects
     K18 notes (2017-18) - personal & Professor's, as well as my projects
+~~~
+FUTURE IMPLEMENTATIONS AND FIXES:
+    - Complete all required functions
+    - Use templates for the various hash tables (merge sender/receiver HT and wallet HT)

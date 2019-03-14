@@ -7,8 +7,8 @@ class transaction
 {
 private:
     char * transID; //atoi this
-    char * sndr;
-    char * rcvr;
+    char sndr[51];
+    char rcvr[51];
     
 public:
     transaction(/* args */);

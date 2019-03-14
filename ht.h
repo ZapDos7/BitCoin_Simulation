@@ -1,24 +1,29 @@
-#ifndef _T_H_
-#define _T_H_
+#ifndef _HT_H_
+#define _HT_H_
 
-#include "wallet.h"
-
-//hash table
-class HT
+class ht_node
 {
 private:
     int size;
-    wallet ** table;
+    int aa; //aukson airthmos xD
+
 public:
-    HT(int sz);
-    ~HT();
-    void set_size(int sz);
-    int get_size();
-    wallet * get_table();
-    void set_table(wallet ** table1);
-    int hash_fun(wallet w);
-    wallet * insert_wallet(wallet w);
-    //update wallet function for each transaction
+    ht_node(/* args */);
+    ~ht_node();
 };
+
+
+
+class ht
+{
+private:
+    int size; //h1 or h2
+    ht_node * myNodes;
+public:
+    ht(/* args */);
+    ~ht();
+    int hash_fun(/* sth*/);
+};
+
 
 #endif

@@ -12,6 +12,7 @@ System Programming Project #1, 2018-19
 #include "wallet.h"
 #include "ht.h"
 #include "tree.h"
+#include "wallet_ht.h"
 #include "transaction.h"
 
 using namespace std;
@@ -78,25 +79,24 @@ int main(int argc, char const *argv[]) {
 	//read bc file
 	char * line = NULL;
 	size_t len = 0;
-	const char s[2] = " ";
 	char * token;
-	ssize_t read; //file descpriptor, se poion buffer , posa bytes na diavasw
-	HT ht(712); //rng for the wallets
+	ssize_t read;
+	wHT ht(712); //712 <- rng for the wallets
 	while(read = getline(&line, &len, bitCoinBalancesFilePtr)!=-1) {
-		token = strtok(line, s);
+		token = strtok(line, " ");
 		wallet * tmpw;
 		while (token != NULL) {
-			tmpw = ht.get_table();//->set_id(token)
 			tmpw->set_id(token);
 			tmpw->print_id();
 			fprintf(stderr, "%s \n", token);
-			token = strtok(NULL, s); //first bc
+			token = strtok(NULL, " "); //first bc
 			if (token==NULL) {
 				fprintf(stderr, "is null\n");
 			}
 			
 		}//end while line
-		//if (tmpw) free(tmpw);
+		
+		if (tmpw) free(tmpw);
 	}//end while file
 	//elegxos monadikotitas ID wallet, if dublicates merge? delete/ignore?
 	fclose (bitCoinBalancesFilePtr);
@@ -106,13 +106,13 @@ int main(int argc, char const *argv[]) {
 	//same for transactions
 	//elegxos transactionID-unique, not enough funds
 
-	//while (1) {
-		char com[100]; //command
-		printf("Enter desired function");
-		fscanf(stdin, "%s", com);
-		fprintf(stdout, "Your command is\n%s\n", com);
+	//while (1) { //end when error in bitCoinFile
+		//char com[100]; //command
+		//printf("Enter desired function");
+		//fscanf(stdin, "%s", com); or fgets or getline?
+		//fprintf(stdout, "Your command is\n%s\n", com);
 		//read com
-		//strtok com
+		//strtok com or strtok_r
 		//check first word to match with command, check entire command if correct
 		//time: HH:MM
 		//year: DD/MM/YYYY
