@@ -12,8 +12,8 @@ ht_node::~ht_node()
 
 
 ////ht implementations
-ht::ht(/* args */) {
-
+ht::ht(int sz) {
+    this->size = sz;
 }
 
 ht::~ht() {}

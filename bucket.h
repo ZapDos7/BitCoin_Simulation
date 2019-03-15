@@ -2,16 +2,30 @@
 #define _BUCKET_H_
 
 #include <stdlib.h>
+#include "transaction.h"
 
-class myBucket
+class bucket_node
+{
+public:
+    transaction * myTrans;
+    bucket_node * next;
+};
+//
+class bucket
 {
 private:
+    bucket_node * first_bucket; //list of bucket nodes
+    int register_count; //poses eggrafes edw mesa
     void * bytes;
     int size;
-    myBucket * next;
 public:
-    myBucket(int size);
-    ~myBucket();
+    bucket(int sz);
+    ~bucket();
+    //find registry();
+    void add_registry();
+    int remove_registry();
+    void print_bucket();
 };
+
 
 #endif
