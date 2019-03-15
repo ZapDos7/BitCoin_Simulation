@@ -11,10 +11,12 @@ private:
     transaction * myTrans;
     int myKey; //me auto sugkrinoume gia to apotelesma tou hash function
     ht_node * next;
-    //bucket * bucket; //list of overflowin buckets
+    bucket ** myBucket; //list of overflowin buckets
 public:
     ht_node();
     ~ht_node();
+    void add_transaction();
+    ht_node * get_next();
 };
 
 
@@ -27,9 +29,11 @@ private:
 public:
     ht(int sz);
     ~ht();
-    int hash_fun(/* sth*/);
-    void add_bucket(int where);
-    void remove_bucket(int where);
+    int hash_fun();
+    //void add_bucket(int where);
+    //void remove_bucket(int where);
+    void add_registry();
+    void remove_registry();
 };
 
 
