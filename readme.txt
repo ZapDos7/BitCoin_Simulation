@@ -30,7 +30,9 @@ The code has been seperated to the following files:
     bc.cpp/.h               bitcoin class and methods
     bc_node.cpp/.h          list of bitcoins node so there's layers of abstraction for the list and the bitcoin class may be reusable
     wallet.cpp/.h           my choice of data structure (hashtable) for the elements of the wallets and the wallets themselves.
+    wallet_ht.cpp/.h        wallet hash table implementation
     ht.cpp/.h               hash tables implementation
+    bucket.cpp/.h           buckets used in the hash tables
     tree.cpp/.h             BitCoin tree implementation
     transaction.cpp/.h      transaction class (id, sndr, rcvr...)
     datetime.cpp/.h         time and date handling classes and methods
