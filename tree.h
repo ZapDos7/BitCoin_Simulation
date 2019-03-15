@@ -51,6 +51,7 @@ public:
     ~tree();
     void add_node();//based on transaction - ELEGXOS
     //elegxos tou tree: prepei ola ta fulla na exoun sum = initial value;
+    void print_dfs();
 };
 
 #endif

@@ -37,3 +37,6 @@ void tree::add_node() {
     //check upoloipo (apo walletHT)
     //new node me ID = send or rcvr an einai left i rogith
 }
+void tree::print_dfs() {
+    
+}

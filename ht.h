@@ -5,7 +5,7 @@ class ht_node
 {
 private:
     int size;
-    int aa; //aukson airthmos xD
+    int aa; //aukson airthmos xD - me auto sugkrinoume gia to apotelesma tou hash function
 
 public:
     ht_node(/* args */);
@@ -13,7 +13,7 @@ public:
 };
 
 
-
+//ousiastika sta HT exoume to istoriko twn transactions
 class ht
 {
 private:

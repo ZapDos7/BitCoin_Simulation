@@ -14,6 +14,7 @@ System Programming Project #1, 2018-19
 #include "tree.h"
 #include "wallet_ht.h"
 #include "transaction.h"
+#include "datetime.h"
 
 using namespace std;
 
@@ -81,7 +82,7 @@ int main(int argc, char const *argv[]) {
 	size_t len = 0;
 	char * token;
 	ssize_t read;
-	wHT ht(712); //712 <- rng for the wallets
+	/*wHT ht(712); //712 <- rng for the wallets
 	while(read = getline(&line, &len, bitCoinBalancesFilePtr)!=-1) {
 		token = strtok(line, " ");
 		wallet * tmpw;
@@ -98,6 +99,7 @@ int main(int argc, char const *argv[]) {
 		
 		if (tmpw) free(tmpw);
 	}//end while file
+	*/
 	//elegxos monadikotitas ID wallet, if dublicates merge? delete/ignore?
 	fclose (bitCoinBalancesFilePtr);
 	if (line) free(line); //line was temporary
@@ -116,16 +118,45 @@ int main(int argc, char const *argv[]) {
 		//check first word to match with command, check entire command if correct
 		//time: HH:MM
 		//year: DD/MM/YYYY
+		//1
+		//if not exists date/time, add current max
+		//if exists, check if before current max, update currwnt max
 		//requestTransaction swID rwID amount date time ->elegxgos eparkwn funds, update domes, msg for errors or ok. an de do8ei date-time: wra sustimatos upon execution (must be metagenestera of layyer sunallagis pou katagrafike ws twra apo to app)
+		//2
+		//string manipulation of (1)
 		//requestTransactions sID1 rID1 a d t; sID2 wID2 a d t;... -> anamesa exoun semicolon ;
+		//3
+		//like (2) but file
 		//requestTransactions inputfile -> apo file (xwrizontai me \n) -  PALI EGW DINW ID
+		//4
+		//split into 3 functions? (w/o dt, with d, with t, both) -> math.cpp for < >
 		//finEarnings walletID t1 y1 t2 y2 -> walletID = rcvID, return initial poso pou elave o wID (euros xronou may not exist => all (an uparxei t1, must uparxei t2 (same for y1, y2))), present all registers me wID=rcv
+		//5
+		//like above
 		//findPayments walletID -> walletID = senderID (like above)
+		//6
+		//posa exei o sender (apo HT/list)
 		//walletStatus walletID -> return current wallet balance
+		//7
+		//counter of num of trans for each coin?
+		//unspent = rightmost leaf node of bc tree!!!!!!
 		//bitvoinStatus BCID -> print poses sunallages me auto, poso unused poso, poso used se sunallagi
+		//8
+		//for each BC -> each transaction -> BFS tree, print (check if double prints! - pointers back to tree - case "static")
 		//traceCoin BCID -> return istoriko sunallagwn with this bc (not must xroniki seira)
+		//9!!!
 		//exit -> free!!!
 		
 	//}
 	exit(EXIT_SUCCESS);
 }
+
+/*
+Se kathe transaction:
+	1. elegxos upoloipou sender
+	2. elegxw an elava pote to apaitoumeno poso apo kapoion kai den to ksodepsa (rcvHT ->node -> is leaf?) if yes, go to 3: if no, go to 6:
+	3. update wallet, coin counter
+	4. insert transaction to sndrHT, rcvrHT
+	5. update tree of bitcoin used
+	6. sum unspent -> thelw parapanw bitcoins, do the same many times (3,4,5)
+*/

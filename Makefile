@@ -8,7 +8,8 @@ make:
 	g++ -c tree.cpp
 	g++ -c transaction.cpp
 	g++ -c bucket.cpp
-	g++ -g3 -Wall bitcoin.o wallet.o bc.o wallet_ht.cpp bc_node.o ht.o tree.o transaction.o bucket.o -o bitcoin
+	g++ -c datetime.cpp
+	g++ -g3 -Wall bitcoin.o wallet.o bc.o wallet_ht.cpp bc_node.o ht.o tree.o transaction.o datetime.o bucket.o -o bitcoin
 
 run:
 	./bitcoin -a bitCoinBalancesFile.txt -t transactionsFile.txt -v 1 -h1 16 -h2 16 -b 4
