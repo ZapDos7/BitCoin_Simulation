@@ -4,6 +4,8 @@ System Programming (Class of Even Registration Numbers)
 Spring Semester 2018-19
 Professor: Ntoulas A.
 ~~~
+Final Grade: 35%
+~~~
 INSTRUCTIONS:
 To compile: 
     $make
